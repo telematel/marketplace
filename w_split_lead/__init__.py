@@ -1,7 +1,7 @@
 #
 # Module written to Odoo, Open Source Management Solution
 #
-# Copyright (c) 2017 Telematel - http://www.telematel.com/
+# Copyright (c) 2017 Telematel - http://www.wedoo.tech/
 # All Rights Reserved.
 #
 # Developer(s): Alan Guzmán

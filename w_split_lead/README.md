@@ -1,4 +1,4 @@
-TELEMATEL | Split Lead
+Wedoo | Split Lead
 ---------------------------------------
 
 This module adds a new tab to register the users who participated in it and
