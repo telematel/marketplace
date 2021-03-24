@@ -32,6 +32,7 @@
     'summary': "Split lead percentages worked by commercial",
     'website': 'https://wedoo.tech/',
     'version': '1.0',
+    'license': 'AGPL-3',
     'description': """
 Split lead
 =================
@@ -50,6 +51,9 @@ equal to the percentage of the opportunity.
         'views/split_lead_view.xml',
         'views/split_lead_pivot_view.xml',
         'views/inherit_crm_lead_view.xml'
+    ],
+    'images': [
+        'static/description/Split_screenshot.jpg',
     ],
     'demo': [],
     'qweb': [],
