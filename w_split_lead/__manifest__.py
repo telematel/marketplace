@@ -25,7 +25,7 @@
 ########################################################################
 
 {
-    'name': 'Wedoo | split lead',
+    'name': 'Wedoo | Split lead',
     'author': 'Wedoo ©',
     'category': 'CRM',
     'sequence': 50,
