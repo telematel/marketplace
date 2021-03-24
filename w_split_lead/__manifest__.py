@@ -30,7 +30,7 @@
     'category': 'CRM',
     'sequence': 50,
     'summary': "Split lead percentages worked by commercial",
-    'website': 'https://wedoo.tech/',
+    'website': 'https://www.wedoo.tech/',
     'version': '1.0',
     'license': 'AGPL-3',
     'description': """
