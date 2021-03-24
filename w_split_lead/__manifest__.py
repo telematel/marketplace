@@ -53,7 +53,8 @@ equal to the percentage of the opportunity.
         'views/inherit_crm_lead_view.xml'
     ],
     'images': [
-        'static/description/Split_screenshot.jpg',
+        'static/description/Split_description.jpg',
+        'static/description/Split_screenshot.png',
     ],
     'demo': [],
     'qweb': [],
