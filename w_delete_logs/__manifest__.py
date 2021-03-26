@@ -46,6 +46,10 @@ the elimination times.
         'views/inherit_res_config_settings.xml'
 
     ],
+     'images': [
+        'static/description/log_description.jpg',
+        'static/description/log_screenshot.jpg',
+    ],
     'demo': [],
     'qweb': [],
     'application': False,
