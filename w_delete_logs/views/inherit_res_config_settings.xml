@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="delete_logs_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">delete_logs.res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//div[hasclass('settings')]" position="inside">
+                 <div class="app_settings_block" data-string="Delete Logs" string="Delete Logs" data-key="w_delete_logs">
+                     <h2>Log Deletion Planning</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="times"/>
+                                    <span class="fa fa-lg fa-hourglass-2" title="Planned time to execute log deletion." role="img" aria-label="Planned time to execute log deletion." />
+                                    <div class="row">
+                                        <div class="text-muted col-lg-8">
+                                            Select the time terms at which you want to delete the logs.
+                                        </div>
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="times"
+                                                class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 o_setting_box" title="Model Logs to delete">
+                                <div class="o_setting_right_pane">
+                                    <label for="model_ids"/>
+                                    <div class="text-muted">
+                                        Model Logs to delete.
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="model_ids" domain="[('transient', '=', False)]"
+                                                class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                 </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
