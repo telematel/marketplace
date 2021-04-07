@@ -2,7 +2,7 @@
 #
 # Module written to Odoo, Open Source Management Solution
 #
-# Copyright (c) 2017 Telematel - http://www.telematel.com/
+# Copyright (c) 2021 Wedoo - https://wedoo.tech/
 # All Rights Reserved.
 #
 # Developer(s): Alan Guzmán
@@ -27,18 +27,17 @@
 {
     'name': 'Wedoo | Split lead',
     'author': 'Wedoo ©',
-    'category': 'Extra Tools',
+    'category': 'CRM',
     'sequence': 50,
     'summary': "Split lead percentages worked by commercial",
-    'website': 'https://www.wedoo.tech',
+    'website': 'https://www.wedoo.tech/',
     'version': '1.0',
     'license': 'AGPL-3',
     'description': """
 Split lead
-==============
-
+=================
 This module adds a new tab to register the users who participated in it and
-who obtained the percentages, in addition, that the percentage of the lines was
+who obtained the percentages, in addition the percentage of the lines was
 equal to the percentage of the opportunity.
     """,
     'depends': [
@@ -54,8 +53,8 @@ equal to the percentage of the opportunity.
         'views/inherit_crm_lead_view.xml'
     ],
     'images': [
-        'static/description/split_description.jpg',
-        'static/description/split_screenshot.jpg',
+        'static/description/split_description.png',
+        'static/description/split_screenshot.png',
     ],
     'demo': [],
     'qweb': [],
