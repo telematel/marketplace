@@ -30,7 +30,7 @@
     'category': 'CRM',
     'sequence': 50,
     'summary': "Split lead percentages worked by commercial",
-    'website': 'https://www.wedoo.tech',
+    'website': 'https://www.wedoo.tech/',
     'version': '1.0',
     'license': 'AGPL-3',
     'description': """
@@ -43,6 +43,7 @@ equal to the percentage of the opportunity.
     'depends': [
         'base',
         'crm',
+        'sale_crm',
         'sale'
     ],
     'data': [
@@ -52,8 +53,8 @@ equal to the percentage of the opportunity.
         'views/inherit_crm_lead_view.xml'
     ],
     'images': [
-        'static/description/split_description.jpg',
-        'static/description/split_screenshot.jpg',
+        'static/description/split_description.png',
+        'static/description/split_screenshot.png',
     ],
     'demo': [],
     'qweb': [],
