@@ -47,8 +47,8 @@ the elimination times.
 
     ],
      'images': [
-        'static/description/log_description.jpg',
-        'static/description/log_screenshot.jpg',
+        'static/description/log_description.png',
+        'static/description/log_screenshot.png',
     ],
     'demo': [],
     'qweb': [],
