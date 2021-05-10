@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="assets_backend" name="w_task_kanban_view assets"
+                  inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript"
+                        src="/w_task_kanban_view/static/src/js/widgets.js"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/w_task_kanban_view/static/src/scss/kanban_view.scss"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

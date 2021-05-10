@@ -1,0 +1,58 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* w_task_kanban_view
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-11 16:30+0000\n"
+"PO-Revision-Date: 2020-02-11 11:32-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,field_description:w_task_kanban_view.field_project_task_type__color
+msgid "Color Index"
+msgstr "Color"
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,help:w_task_kanban_view.field_project_task__out_of_stage
+msgid "Has the same state of parent task"
+msgstr "Bandera para saber si la tarea hija tiene la misma etapa que la padre"
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,field_description:w_task_kanban_view.field_project_task__out_of_stage
+msgid "Out Of Stage"
+msgstr "Fuera de etapa"
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,field_description:w_task_kanban_view.field_project_task__parent_progress_checklist
+msgid "Progress of checklist"
+msgstr "Progreso de trabajo realizado"
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,help:w_task_kanban_view.field_project_task__parent_progress_checklist
+msgid "Progress of checklist."
+msgstr "Progreso de trabajo realizado."
+
+#. module: w_task_kanban_view
+#: model:ir.model.fields,field_description:w_task_kanban_view.field_project_task__stage_color
+msgid "Stage Color"
+msgstr "Color Etapa"
+
+#. module: w_task_kanban_view
+#: model:ir.model,name:w_task_kanban_view.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: w_task_kanban_view
+#: model:ir.model,name:w_task_kanban_view.model_project_task_type
+msgid "Task Stage"
+msgstr "Etapa"

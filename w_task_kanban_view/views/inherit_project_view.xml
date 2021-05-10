@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_task_parent_kanban" model="ir.ui.view">
+            <field name="name">project.parent.task</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_kanban"/>
+            <field name="arch" type="xml">
+                <field name="rating_ids" position="after">
+                    <field name="parent_id"/>
+                    <field name="out_of_stage"/>
+                    <field name="parent_progress_checklist"/>
+                    <field name="stage_color"/>
+                </field>
+                <xpath expr="//t[@t-name='kanban-box']/div[1]" position="attributes">
+                    <attribute name="t-attf-style">#{record.parent_id.raw_value and 'border: 2px solid #00A09D;' or ''}#{record.stage_color.raw_value}</attribute>
+                    <!--<attribute name="t-attf-kanban-bg">_#{kanban_getcolor(record.stage_color.raw_value)}</attribute>-->
+                </xpath>
+                <xpath expr="//strong[hasclass('o_kanban_record_title')]" position="before">
+                    <t t-if="record.parent_id.raw_value">
+                        <field name="parent_id" widget="w_kanban_clickable"/>
+                        <field name="out_of_stage" widget="w_toggle_boolean"/>
+                        <field name="parent_progress_checklist" widget="progressbar"/>
+                        <hr style="border: 1px solid #00A09D"/>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
