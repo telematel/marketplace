@@ -1,0 +1,8 @@
+.oe_kanban_global_click {
+  @for $size from 2 through length($o-colors) {
+    // Note: the first color is not defined as it is the 'no color' for kanban
+    &[kanban-bg=_#{$size - 1}] {
+      background-color: nth($o-colors, $size);
+    }
+  }
+}
