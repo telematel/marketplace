@@ -7,7 +7,7 @@
     'summary': "Parent task on Kanban View",
     'website': 'https://www.wedoo.tech',
     'version': '13.0.0.0',
-    'license': 'AGPL-3',
+    'license': 'LGPL-3',
     'description': """
         Task Kanban View
         =================
