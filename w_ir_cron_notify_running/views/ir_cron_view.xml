@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="ir_cron_view_form_inherit" model="ir.ui.view">
+            <field name="name">ir.cron.view.form</field>
+            <field name="model">ir.cron</field>
+            <field name="inherit_id" ref="base.ir_cron_view_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_title" position="before">
+                    <div class="alert alert-danger" role="alert" attrs="{'invisible': [('running', '!=', True)]}">
+                        <strong>Attention!!! The cron is now running.</strong>
+                    </div>
+                </div>
+                <xpath expr="//field[@name='doall']" position="after">
+                    <field name="running" invisible="1"/>
+                </xpath>
+                <xpath expr="//button[@name='method_direct_trigger']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('state', '!=', 'code'), ('running', '=', True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ir_cron_view_tree_inherit" model="ir.ui.view">
+            <field name="name">ir.cron.view.tree</field>
+            <field name="model">ir.cron</field>
+            <field name="inherit_id" ref="base.ir_cron_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='priority']" position="before">
+                    <field name="running" invisible="1"/>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="decoration-danger">running == True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="ir_cron_view_search_inherit" model="ir.ui.view">
+            <field name="name">ir.cron.view.search</field>
+            <field name="model">ir.cron</field>
+            <field name="inherit_id" ref="base.ir_cron_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+                    <field name="running"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Running" name="running" domain="[('running', '=', True)]" context="{}"/>
+                    <filter string="Not Running" name="running" domain="[('running', '=', False)]" context="{}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
