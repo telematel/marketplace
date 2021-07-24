@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record model="ir.module.category" id="module_category_debug_mode">
+            <field name="name">Debug Mode</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <record model="res.groups" id="group_debug_mode_enable">
+            <field name="category_id" ref="w_disable_debug_mode.module_category_debug_mode"/>
+            <field name="name">Enable debug mode</field>
+        </record>
+    </data>
+</odoo>
