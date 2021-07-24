@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data >
+        <function model="ir.cron" name="set_all_cron_running_off">
+            <value model="ir.cron" search="[('running', '=', True)]"/>
+        </function>
+    </data>
+</odoo>

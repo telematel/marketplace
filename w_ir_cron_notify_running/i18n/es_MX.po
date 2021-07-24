@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* w_ir_cron_notify_running
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-22 12:59-0400\n"
+"PO-Revision-Date: 2021-07-22 13:03-0400\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Language: es_MX\n"
+
+#. module: w_ir_cron_notify_running
+#: model_terms:ir.ui.view,arch_db:w_ir_cron_notify_running.ir_cron_view_form_inherit
+msgid "<strong>Attention!!! The cron is now running.</strong>"
+msgstr "<strong>Atención!!! La acción planificada esta en ejecución actualmente.</strong>"
+
+#. module: w_ir_cron_notify_running
+#: code:addons/w_ir_cron_notify_running/models/inherit_ir_cron.py:79
+#: code:addons/w_ir_cron_notify_running/models/inherit_ir_cron.py:87
+#, python-format
+msgid "Cron notification."
+msgstr "Notificación de Acción Planificada."
+
+#. module: w_ir_cron_notify_running
+#: model_terms:ir.ui.view,arch_db:w_ir_cron_notify_running.ir_cron_view_search_inherit
+msgid "Not Running"
+msgstr "Detenido"
+
+#. module: w_ir_cron_notify_running
+#: model:ir.model.fields,field_description:w_ir_cron_notify_running.field_ir_cron__running
+#: model_terms:ir.ui.view,arch_db:w_ir_cron_notify_running.ir_cron_view_search_inherit
+msgid "Running"
+msgstr "En ejecución"
+
+#. module: w_ir_cron_notify_running
+#: model:ir.model,name:w_ir_cron_notify_running.model_ir_cron
+msgid "Scheduled Actions"
+msgstr "Acciones Planificadas"
+
+#. module: w_ir_cron_notify_running
+#: code:addons/w_ir_cron_notify_running/models/inherit_ir_cron.py:88
+#, python-format
+msgid "The cron %s has finished."
+msgstr "La acción planificada %s ha finalizado."
+
+#. module: w_ir_cron_notify_running
+#: code:addons/w_ir_cron_notify_running/models/inherit_ir_cron.py:80
+#, python-format
+msgid "The cron %s has started."
+msgstr "La acción planificada %s ha iniciado."
+
+#. module: w_ir_cron_notify_running
+#: model:ir.model,name:w_ir_cron_notify_running.model_res_users
+msgid "Users"
+msgstr "Usuarios"
