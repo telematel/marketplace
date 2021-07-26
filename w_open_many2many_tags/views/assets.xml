@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="open_many2many_tags" name="open_many2many_tags" inherit_id="web.assets_backend">
+            <xpath expr="link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/w_open_many2many_tags/static/src/scss/open.scss"/>
+            </xpath>
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/w_open_many2many_tags/static/src/js/open_many2many_tags.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>
