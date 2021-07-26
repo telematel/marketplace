@@ -53,5 +53,5 @@ difference that clicking on an element opens the corresponding form.
     ],
     'installable': True,
     'application': False,
-}
+
 }
