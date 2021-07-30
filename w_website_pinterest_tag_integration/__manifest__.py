@@ -19,8 +19,8 @@
     ],
     'demo': [],
     'images': [
-        'static/description/description.png',
-        'static/description/screenshot.png',
+        'static/description/img_description.png',
+        'static/description/img_screenshot.png',
     ],
     "application": False,
     "installable": True, 
