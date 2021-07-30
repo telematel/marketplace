@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* w_website_pinterest_tag_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-09 21:08+0000\n"
+"PO-Revision-Date: 2021-07-09 17:08-0400\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Language: es_MX\n"
+
+#. module: w_website_pinterest_tag_integration
+#: model_terms:ir.ui.view,arch_db:w_website_pinterest_tag_integration.view_website_config_settings
+msgid ""
+"<span class=\"fa fa-lg fa-globe\" title=\"Values set here are website-"
+"specific.\" groups=\"website.group_multi_website\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-globe\" title=\"Los valores que se "
+"establecen aquí son específicos para este sitio web.\" groups="
+"\"website.group_multi_website\"/>"
+
+#. module: w_website_pinterest_tag_integration
+#: model:ir.model,name:w_website_pinterest_tag_integration.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configuración"
+
+#. module: w_website_pinterest_tag_integration
+#: model_terms:ir.ui.view,arch_db:w_website_pinterest_tag_integration.view_website_config_settings
+msgid "Ex: 0123456789012"
+msgstr "Ej: 0123456789012"
+
+#. module: w_website_pinterest_tag_integration
+#: model_terms:ir.ui.view,arch_db:w_website_pinterest_tag_integration.view_website_config_settings
+msgid "Manage all your tags with these options."
+msgstr "Administre sus etiquetas con estas opciones."
+
+#. module: w_website_pinterest_tag_integration
+#: model:ir.model.fields,field_description:w_website_pinterest_tag_integration.field_res_config_settings__pinterest_tag_key
+#: model:ir.model.fields,field_description:w_website_pinterest_tag_integration.field_website__pinterest_tag_key
+msgid "Pinterest Tag ID"
+msgstr "Id de Etiqueta Pinterest"
+
+#. module: w_website_pinterest_tag_integration
+#: model:ir.model.fields,field_description:w_website_pinterest_tag_integration.field_res_config_settings__use_pinterest_tag
+#: model:ir.model.fields,field_description:w_website_pinterest_tag_integration.field_website__use_pinterest_tag
+msgid "Use Pinterest Tag"
+msgstr "Utilizar Etiquetas Pinterest"
+
+#. module: w_website_pinterest_tag_integration
+#: model:ir.model.fields,help:w_website_pinterest_tag_integration.field_res_config_settings__use_pinterest_tag
+#: model:ir.model.fields,help:w_website_pinterest_tag_integration.field_website__use_pinterest_tag
+msgid "Use Pinterest Tag tracking system"
+msgstr "Utilizar sistema Pinterest Tag"
+
+#. module: w_website_pinterest_tag_integration
+#: model:ir.model,name:w_website_pinterest_tag_integration.model_website
+msgid "Website"
+msgstr "Sitio web"

@@ -1,0 +1,125 @@
+<odoo>
+    <template id="pinterest_script" inherit_id="website.assets_frontend" name="Pinterest Functions">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/w_website_pinterest_tag_integration/static/js/script.js"/>
+        </xpath>
+    </template>
+
+    <template id="web_layout" inherit_id="website.layout">
+        <xpath expr="//meta[@name='generator']" position="before">
+            <!-- Pinterest Tag -->
+            <t t-if="website and website.use_pinterest_tag">
+                <script>
+                    !function(e){
+                    if(!window.pintrk){window.pintrk = function () {
+                    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};
+                    var n=window.pintrk;
+                    n.queue=[],n.version="3.0";
+                    var t=document.createElement("script");
+                    t.async=!0,t.src=e;
+                    var r=document.getElementsByTagName("script")[0];
+                    r.parentNode.insertBefore(t,r)
+                    }}("https://s.pinimg.com/ct/core.js");
+                    pintrk('load',<t t-esc="website.pinterest_tag_key"/>, {em: '<t t-esc="user_id.email"/>'});
+                    pintrk('page');
+                    //Register Page Visit
+                    var register_page_visit = true;
+                    var inv_paths = ["/web/login", "/shop/payment", "/shop/cart"];
+                    var page_visit_always = true;
+                    for (var inv_path in inv_paths)
+                        if (window.location.pathname.endsWith(inv_paths[inv_path])){
+                            register_page_visit = false;
+                            break;
+                        }
+                    // Remove pinterest_event flag from sessionStorage if no signup success!
+                    if(window.location.pathname.endsWith("/web/signup")){
+                        var pinterest_event = window.sessionStorage.getItem("pinterest_event");
+                        if (pinterest_event == 'signup') window.sessionStorage.removeItem("pinterest_event");
+                        register_page_visit = false;
+                    }
+                    // Register Pinterest Signup OK
+                    else if (window.location.pathname.endsWith("/my")){
+                        var pinterest_event = window.sessionStorage.getItem("pinterest_event");
+                        if(pinterest_event == 'signup'){
+                            window.sessionStorage.removeItem("pinterest_event");
+                            register_page_visit = false;
+                            pintrk('track', 'signup');
+                        }
+                    }
+                    // Register Pinterest Add To Cart
+                    else{
+                        var pinterest_event = window.sessionStorage.getItem("pinterest_event");
+                        window.sessionStorage.removeItem("pinterest_event");
+                        if(pinterest_event == 'add_to_cart'){
+                            line_items = [];
+                            <t t-if="website_sale_order and website_sale_order.order_line">
+                                <t t-foreach="website_sale_order.order_line" t-as="order_line">
+                                    line_items.push({
+                                    product_name: '<t t-esc="order_line.product_id.name"/>',
+                                    product_category: '<t t-esc="order_line.product_id.categ_id.name"/>',
+                                    product_id: '<t t-esc="order_line.product_id.default_code or order_line.product_id.id"/>',
+                                    product_price: '<t t-esc="order_line.product_id.lst_price"/>',
+                                    product_quantity:<t t-esc="order_line.product_uom_qty"/>,
+                                    });
+                                </t>
+                                pintrk('track', 'addtocart', {
+                                    value:<t t-esc="website_sale_order.amount_total"/>,
+                                    order_quantity:<t t-esc="website_sale_order.cart_quantity"/>,
+                                    currency: '<t t-esc="website_sale_order.currency_id.name"/>',
+                                    order_id: '<t t-esc="website_sale_order.name"/>',
+                                    line_items: line_items,
+                                });
+                            </t>
+                            register_page_visit = false;
+                        }
+                    }
+                    // Register Pinterest Page Visit
+                    if (register_page_visit || page_visit_always) {
+                        pintrk('track', 'pagevisit');
+                    }
+                </script>
+
+                <noscript>
+                    <img t-if="website and website.use_pinterest_tag"
+                         height="1" width="1" style="display:none;" alt=""
+                         t-attf-src="https://ct.pinterest.com/v3/?event=pagevisit&amp;tid={website.pinterest_tag_key}&amp;pd[em]={user_id.email}&amp;noscript=1"/>
+                </noscript>
+                <!--end Pinterest Tag -->
+            </t>
+        </xpath>
+    </template>
+
+    <!--Product Add to Cart and Checkout script-->
+    <template id="pinterest_sale_order_script" name="Pinterest Sale Register">
+        <script>
+            <t t-if="website and website.use_pinterest_tag">
+                line_items = [];
+                <t t-foreach="website_sale_order.order_line" t-as="order_line">
+                    line_items.push({
+                    product_name: '<t t-esc="order_line.product_id.name"/>',
+                    product_category: '<t t-esc="order_line.product_id.categ_id.name"/>',
+                    product_id: '<t t-esc="order_line.product_id.default_code or order_line.product_id.id"/>',
+                    product_price: '<t t-esc="order_line.product_id.lst_price"/>',
+                    product_quantity:<t t-esc="order_line.product_uom_qty"/>,
+                    });
+                </t>
+                pintrk('track', '<t t-esc="pinterest_event_name"/>', {
+                value:<t t-esc="website_sale_order.amount_total"/>,
+                order_quantity:<t t-esc="website_sale_order.cart_quantity"/>,
+                currency: '<t t-esc="website_sale_order.currency_id.name"/>',
+                order_id: '<t t-esc="website_sale_order.name"/>',
+                line_items: line_items,
+                });
+            </t>
+        </script>
+    </template>
+    <!--Product Checkout-->
+    <template id="payment" inherit_id="website_sale.payment" name="Payment">
+        <t t-call="website.layout" position="inside">
+            <t t-set="pinterest_event_name" t-value="'checkout'"/>
+            <t t-call="w_website_pinterest_tag_integration.pinterest_sale_order_script">
+                <t t-set="pinterest_event_name" t-value="'checkout'"/>
+            </t>
+        </t>
+    </template>
+</odoo>
