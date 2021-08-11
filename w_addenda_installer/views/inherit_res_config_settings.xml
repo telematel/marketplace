@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <odoo>
+        <data>
+            <record id="w_addenda_installer_account_res_config_settings_view_form" model="ir.ui.view">
+                <field name="name">w.addenda.installer.res.config.settings.view.form.</field>
+                <field name="model">res.config.settings</field>
+                <field name="inherit_id" ref="account.res_config_settings_view_form" />
+                <field name="arch" type="xml">
+                    <xpath expr="//div[@id='invoicing_settings']" position="after">
+                        <h2>Addendas</h2>
+                        <div class="row mt16 o_settings_container" id="w_addendas_edi_settings">
+                            <div class="col-12 col-lg-6 o_setting_box" title="Select the Addendas to use">
+                                <span class="o_form_label">Configure your Addendas</span>
+                                <div class="text-muted">
+                                    Select the Addendas you want to install or uninstall
+                                </div>
+                                <div>
+                                    <br></br>
+                                    <div>
+                                        <field name="addenda_modules" widget="one2many">
+                                            <tree string="addendas" editable="bottom" create="0" delete="0">
+                                                <field name="shortdesc"/>
+                                                <field name="state"/>
+                                                <field name="install_addenda" readonly="False"/>
+                                            </tree>
+                                        </field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </xpath>
+                </field>
+            </record>
+        </data>
+    </odoo>

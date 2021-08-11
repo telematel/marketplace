@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_delay_invoice_show" model="res.groups">
+            <field name="name">Show delay invoice option</field>
+        </record>
+    </data>
+</odoo>
